@@ -8,10 +8,11 @@
 import UIKit
 
 class HomeVC: UIViewController {
-    
+//MARK: @IBOutlet
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imgBG: UIImageView!
     
+//MARK: Variables
     var homeData = [
         HomeModel(isEven: true, img: UIImage(named: "orders")!, title: "orders".uppercased()),
         HomeModel(isEven: false, img: UIImage(named: "Workflow")!, title: "how it works".uppercased()),
@@ -19,6 +20,7 @@ class HomeVC: UIViewController {
         HomeModel(isEven: false, img: UIImage(named: "contact")!, title: "contact us".uppercased())
     ]
     
+//MARK: View Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +33,7 @@ class HomeVC: UIViewController {
     
 }
 
+//MARK: Table View Delegate and DataSource
 extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         homeData.count
